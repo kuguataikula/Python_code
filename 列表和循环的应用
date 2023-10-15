@@ -1,0 +1,91 @@
+#1、打印1-300以内能被3和5整除的数。
+
+for i in range(1,301):
+    if i % (3*5) == 0:
+        print(i,end = " " )
+    pass
+# 2、循环输入任意3名学生的姓名和学号，输出完成后，打印结果。
+# 结果格式如下
+# xx同学的学号是xxxxxx。
+i = 0
+for i in range(3):
+    name = str(input("请输入姓名："))
+    num = str(input("请输入学号："))
+    while len(num) != 6:
+        print("学号错误！！！\n请重新输入")
+        name = str(input("请输入姓名："))
+        num = str(input("请输入学号："))   
+    print("{}同学的学号是{}".format(name,num))
+    
+#3、打印图案。
+#    *
+   
+#   * *
+  
+#  *   *
+ 
+# *******
+
+for i in range(1,8):
+    if i % 2 == 0:
+        print("\n")
+    for j in range(1,8):
+        if i == 1 :
+            if j == 4:
+                print("*",end = "")
+            elif j == 7:
+                print(" ", end = "\n")
+            else : 
+                print(" ",end = "");
+        elif i == 3:
+            if j == 3:
+                print("*",end = "")
+            elif j == 5:
+                print("*",end = "")
+            elif j == 7:
+                print(" ", end = "\n")
+            else : 
+                print(" ",end = "");
+        elif i == 5:
+            if j == 2:
+                print("*",end = "")
+            elif j == 6:
+                print("*",end = "")
+            elif j == 7:
+                print(" ", end = "\n")
+            else : 
+                print(" ",end = "");
+        elif i == 7:
+            print("*",end = "")
+        else : 
+           pass
+    
+ 
+#4、创建列表，列表名为a，其值为0至1000，能被7和3整除的数据；访问列表的倒数第一个数据；访问列表python索引的第1至5个元素。
+a = []
+for i in range(0, 1001):
+    if i % 3 == 0 and i % 7 == 0:
+        a.append(i)
+print(a,end = " ")
+
+# 5、用循环实现用户登录需求：
+# （1）输入用户名和密码；
+# （2）判断用户名和密码是否正确（username：root，passwd：123）；
+# （3）登录仅有三次机会，登录错误会报错，超过3次错误登录将无法登录系统。
+
+
+username = "root"
+password = "123"
+i = 1
+while(i): 
+    username1 = str(input("请输入用户名："))
+    password1 = str(input("请输入密码："))
+    if "root" == username1 and "123" == password:
+        print("欢迎登陆！！！")
+        i = 0
+    else:
+        if (i == 3):
+            i = 0
+        else :
+            print("用户名或密码错误错误！！！\n请重新输入\n你还有{}次机会".format(3-i)) 
+            i += 1
