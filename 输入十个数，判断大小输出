@@ -1,0 +1,4 @@
+a = []
+for i in range(10):
+    a.append(eval(input("请输入第{}数字：".format(i+1))))
+sorted(a)
