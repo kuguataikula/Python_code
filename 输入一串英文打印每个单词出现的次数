@@ -1,0 +1,15 @@
+words = "Keep on going and never give up. Believe in yourself. Actions speak louder than words."
+
+words = words.replace(".","").lower()
+
+words = words.split()
+
+
+wordscount = {}
+
+for word in words:
+    if word in wordscount.keys():
+        wordscount[word] += 1
+    else:
+        wordscount[word] = 1
+    print("{} ------------ {}次".format(word,wordscount[word]))
