@@ -1,0 +1,22 @@
+score = []
+
+ju_num = input("输入评委人数：")
+while not ju_num.isnumeric():
+    print("评委人数输入错误，请从新输入：")
+    ju_num = input("从新输入评委人数：")
+ju_num = eval(ju_num)
+
+
+while len(score) < ju_num:
+    print("第{}个评委输入分数".format(len(score)+1))
+    scoring = eval(input("请输入一个分数："))
+    while scoring < 0 or scoring > 10:
+        print("输入分数有误，请从新输入。")
+        print("第{}个评委输入分数".format(len(score)+1))
+        scoring = eval(input("请从新输入一个分数："))
+    score.append(scoring)
+nmb = 0
+for i in score:
+    nmb += i 
+lv = nmb / ju_num
+print(lv)
