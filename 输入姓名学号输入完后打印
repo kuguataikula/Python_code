@@ -1,0 +1,16 @@
+stu_infor = {}
+while len(stu_infor.keys()) <= 2:
+    student_name = input("请输入学生姓名：")
+    while student_name in stu_infor.keys():
+        print("名字重复，该学生信息已经录入，请重新录入！")
+        print("输入错误姓名为：{}".format(student_name))
+        student_name = input("请输入学生姓名：")
+    student_ID = input("请输入学生学号：")
+    while not student_ID.isnumeric() or len(student_ID)!= 6:  
+        print("{}学生的学号{}错误，请重新录入！".format(student_name,student_ID))
+        print("输入错误为的学号：{}".format(student_ID))
+        student_ID = input("请输入学生学号：")
+    stu_infor[student_name] = student_ID
+    print("++"*10)
+for name in stu_infor:
+    print("{}同学的学号是{}".format(name,stu_infor[name]))
